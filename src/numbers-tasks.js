@@ -281,14 +281,7 @@ function getFibonacciNumber(index) {
  *   1  => 1
  */
 function getSumToN(n) {
-  let sum = 0;
-  let i = 0;
-  while (i <= n) {
-    sum += i;
-    i += 1;
-  }
-
-  return sum;
+  return (n * (n + 1)) / 2;
 }
 
 /**
@@ -302,8 +295,10 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  return String(num)
+    .split('')
+    .reduce((acc, digit) => acc + +digit, 0);
 }
 
 /**
